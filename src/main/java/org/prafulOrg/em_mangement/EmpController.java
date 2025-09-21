@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -26,6 +27,11 @@ public class EmpController {
         return employeeService.readEmployee();
     }
 
+    @GetMapping("employees/{id}")
+    public Employee getEmployeeById(@PathVariable Long id) {
+        return employeeService.readEmployeeById(id);
+    }
+
     @PostMapping("employees")
     public String postMethodName(@RequestBody Employee employee) {
         return employeeService.createEmployee(employee);
@@ -39,6 +45,10 @@ public class EmpController {
         }
         return "not found";
     }
-    
+
+    @PutMapping("employees/{id}")
+    public String putMethods(@PathVariable Long id, @RequestBody Employee employee){
+        return employeeService.updateEmployee(id, employee);
+    }    
     
 }
