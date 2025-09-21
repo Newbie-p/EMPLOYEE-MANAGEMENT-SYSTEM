@@ -17,3 +17,15 @@ It provides REST APIs for managing employees with basic **CRUD operations**.
 - MySQL  
 - Postman (for API testing)  
 
+## API Endpoints
+| Method | Endpoint         | Description              |
+|--------|-----------------|--------------------------|
+| GET    | `/employees`    | Get all employees        |
+| GET    | `/employees/{id}` | Get employee by ID      |
+| POST   | `/employees`    | Add a new employee       |
+| PUT    | `/employees/{id}` | Update employee details |
+| DELETE | `/employees/{id}` | Delete employee         |
+
+## Status
+🚧 Project is **in progress**.  
+Frontend (React.js) integration will be added later
